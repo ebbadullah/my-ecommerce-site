@@ -348,7 +348,7 @@ let  departments = [
       category: "Men",
       type: "Skirts",
       size: ["S", "M", "L", "XL"],
-      highlight: true,
+      
     },
     {
       id: 4,
