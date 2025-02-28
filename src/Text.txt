@@ -1,0 +1,108 @@
+function addToCart(id, size) {
+    let cartItemCopy = structuredClone(cartItem); // Cart ka ek copy banao
+
+    if (!size) {
+        toast.error("Please select a size"); // Agar size select nahi kiya to error show karo
+        return;
+    }
+
+    if (cartItemCopy[id]) {
+        if (cartItemCopy[id][size]) {
+            cartItemCopy[id][size] += 1; // Agar item aur size dono exist karte hain to quantity badhao
+        } else {
+            cartItemCopy[id][size] = 1; // Agar sirf item exist karta hai par size nahi hai to 1 set karo
+        }
+    } else {
+        cartItemCopy[id] = {}; // Agar item exist nahi karta to naya object banao
+        cartItemCopy[id][size] = 1; // Pehli baar 1 quantity set karo
+    }
+
+    setCartItem(cartItemCopy); // State update karo
+
+}
+
+
+function productCount() {
+    let count = 0;
+
+    for (let item in cartItem) {
+        for (let size in cartItem[item]) {
+            if (cartItem[item][size] > 0) {
+                count += cartItem[item][size]; // Total items count kar rahe hain
+            }
+        }
+    }
+
+    return count; // Total count return karo
+}
+
+
+
+
+mujhe 1 navbar bana kar do jisme har trah ki animation or  jakas lagay  responvive banana react or tailwind css se bana  nechy sse start karo //
+
+
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+// import { useState } from 'react';
+// import { useEffect } from 'react';
+// import { useLocation } from 'react-router-dom';
+// import { useAuth } from '../context/AuthContext';
+// import { useCart } from '../context/CartContext';
+// import { useProduct } from '../context/ProductContext';
+// import { useUser } from '../context/UserContext';
+// import { useWishlist } from '../context/WishlistContext';
+
+// const Navbar = () => {
+//   const navigate = useNavigate();
+//   const location = useLocation();
+//   const { currentUser } = useAuth();
+//   const { cartItem } = useCart();
+//   const { product } = useProduct();
+//   const { user } = useUser();
+//   const { wishlist } = useWishlist();
+//   const [show, setShow] = useState(false);
+//   const [showSearch, setShowSearch] = useState(false);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [searchResults, setSearchResults] = useState([]);
+//   const [showDropdown, setShowDropdown] = useState(false);
+//   const [showDropdown2, setShowDropdown2] = useState(false);}
+//   const handleSearch = (e) => {
+//     setSearchTerm(e.target.value);
+//   };
+
+//   useEffect(() => {
+//     const results = product.filter((product) =>
+//       product.name.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+//     setSearchResults(results);
+//   }, [searchTerm, product]);
+
+//   const handleSearchSubmit = (e) => {
+    
+}
+//   const handleShowSearch = () => {
+//     setShowSearch(!showSearch);
+//   };
+
+//   const handleShowDropdown = () => {
+//     setShowDropdown(!showDropdown);
+//   };
+
+//   const handleShowDropdown2 = () => {
+//     setShowDropdown2(!showDropdown2);
+//   };
+
+//   const handleLogout = () => {
+//     signOut(auth);
+//     navigate('/');
+//   };
+
+//   const handleShow = () => {
+//     setShow(!show);
+//   };
+
+//   const handleSearchClick = () => {
+//     navigate(`/search/${searchTerm}`);
+
