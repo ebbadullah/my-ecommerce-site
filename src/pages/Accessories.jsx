@@ -4,7 +4,7 @@
 const Accesories = () => {
   return (
     <div>
-      Accesories</div>
+      Accesori</div>
   )
 }
 
