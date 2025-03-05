@@ -85,8 +85,8 @@ import kid20 from "./IMG/Kid/kid20.jpg"
 
 
 
-import Saleban1 from    "./IMG/Saleban1.jpg"
-import Saleban2 from    "./IMG/Saleban2.jpg"
+import Saleban1 from    "./IMG/saleban1.jpg"
+import Saleban2 from    "./IMG/saleban2.jpg"
 import Bann    from      "./IMG/Bann.jpeg"
 import Bann1   from      "./IMG/Bann1.jpg"
 
